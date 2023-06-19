@@ -79,11 +79,6 @@ button:hover {
     width: 30%;
   }
 
-  input,
-  select {
-    height: 40px;
-  }
-
   button {
     padding: 0.75rem;
     width: 120px;
@@ -95,6 +90,14 @@ button:hover {
 @media (min-width: 1024px) {
   label {
     font-size: 1.25rem;
+  }
+
+  .container-form .sectionOne {
+    width: 20%;
+  }
+
+  .container-form .sectionTwo {
+    width: 20%;
   }
 }
 
