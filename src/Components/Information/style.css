@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: center;
   margin: 1rem 0;
+  background: #fff;
 }
 
 .container .month {
@@ -36,4 +37,58 @@
   align-items: center;
   gap: 0.5rem;
   width: 100%;
+}
+
+@media (min-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .container .month {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    margin-bottom: 0rem;
+  }
+
+  .container .month h3 {
+    font-size: 1.25rem;
+  }
+
+  .container .resume {
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container .month {
+    justify-content: center;
+    font-size: 1.25rem;
+  }
+  .container .month h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container .month {
+    font-size: 1.5rem;
+  }
+  .container .month h3 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 2560px) {
+  .container .month {
+    font-size: 2rem;
+  }
+  .container .month h3 {
+    font-size: 2.5rem;
+  }
 }

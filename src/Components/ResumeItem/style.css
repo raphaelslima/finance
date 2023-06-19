@@ -8,3 +8,32 @@
   font-size: 0.75rem;
   font-weight: 700;
 }
+
+@media (min-width: 768px) {
+  .container-info h3 {
+    font-size: 1.25rem;
+  }
+
+  .container-info p {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-info h3 {
+    font-size: 1.5rem;
+  }
+
+  .container-info p {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 1440px) {
+  .container-info h3 {
+    font-size: 1.75rem;
+  }
+
+  .container-info p {
+    font-size: 1.5rem;
+  }
+}

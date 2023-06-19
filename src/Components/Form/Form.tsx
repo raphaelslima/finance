@@ -53,7 +53,7 @@ export const Form = ({ onAdd }: Props) => {
   };
 
   return (
-    <div className="container">
+    <div className="container-insertion">
       <div className="container-form">
         <div className="sectionOne">
           <div className="input">

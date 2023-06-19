@@ -15,13 +15,13 @@
 
 .table tr {
   text-align: center;
-  height: 2.5rem;
+  height: 2rem;
 }
 
-.table td {
+.table tr td {
   text-align: center;
   font-size: 0.5rem;
-  padding: 0 0.5rem;
+  padding: 0.5rem;
   font-weight: 700;
 }
 
@@ -33,4 +33,36 @@
 .table .noExpense {
   color: green;
   font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .table th {
+    font-size: 1.25rem;
+  }
+
+  .table tr td {
+    font-size: 0.75rem;
+    padding: 0 0.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .table th {
+    font-size: 1.25rem;
+  }
+
+  .table tr td {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .table th {
+    font-size: 1.5rem;
+  }
+
+  .table tr td {
+    font-size: 1.25rem;
+  }
 }
