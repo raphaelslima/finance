@@ -2,7 +2,6 @@
 
 Dashboard pessoal de controle financeiro.
 
-<br/>
 Link: https://finance-ten.vercel.app/
 
 ## Tecnologias utilizadas:
