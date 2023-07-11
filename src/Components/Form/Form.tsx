@@ -6,9 +6,10 @@ import { categories } from "../../data/categories";
 
 type Props = {
   onAdd: (data: Data) => void;
+  dataList: Data[];
 };
 
-export const Form = ({ onAdd }: Props) => {
+export const Form = ({ onAdd, dataList }: Props) => {
   const [itemDate, setItemDate] = useState<string>("");
   const [itemCategory, setItemCategory] = useState<string>("");
   const [itemName, setItemName] = useState<string>("");
@@ -42,8 +43,11 @@ export const Form = ({ onAdd }: Props) => {
     if (errors.length > 0) {
       alert(errors.join("\n"));
     } else {
+      let date = new Date(itemDate);
+      date.setHours(date.getHours() + 3);
       onAdd({
-        date: new Date(),
+        id: dataList.length + 1,
+        date: date,
         category: itemCategory,
         name: itemName,
         value: itemValue,

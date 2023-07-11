@@ -26,4 +26,19 @@ export const categories: Category = {
     color: "purple",
     expense: true,
   },
+  freelancer: {
+    title: "Renda-extra",
+    color: "darkgreen",
+    expense: false,
+  },
+  clothes: {
+    title: "Roupas",
+    color: "darkcyan",
+    expense: true,
+  },
+  transport: {
+    title: "Transporte",
+    color: "lightcyan",
+    expense: true,
+  },
 };

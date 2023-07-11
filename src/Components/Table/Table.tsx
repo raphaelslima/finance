@@ -1,5 +1,7 @@
 import "./style.css";
 
+import { AiOutlineDelete } from "react-icons/ai";
+
 //Types
 import { Data } from "../../types/Data";
 import { categories } from "../../data/categories";
@@ -9,9 +11,10 @@ import { formatDate } from "../../helpers/dateFilter";
 
 type Props = {
   datas: Data[];
+  onDelete: (id: number) => void;
 };
 
-const Table = ({ datas }: Props) => {
+const Table = ({ datas, onDelete }: Props) => {
   return (
     <table className="table">
       <thead>
@@ -19,12 +22,13 @@ const Table = ({ datas }: Props) => {
         <th>Categoria</th>
         <th>Título</th>
         <th>Valor</th>
+        <th>Excluir</th>
       </thead>
       <tbody>
         {datas.length > 0
-          ? datas.map((data, i) => {
+          ? datas.map((data) => {
               return (
-                <tr key={i}>
+                <tr key={data.id}>
                   <td>{formatDate(data.date)}</td>
                   <td
                     style={{
@@ -37,10 +41,12 @@ const Table = ({ datas }: Props) => {
                   <td>{data.name}</td>
                   {categories[data.category].expense ? (
                     <td className="expense">
-                      {data.value.toLocaleString("pt-br", {
-                        style: "currency",
-                        currency: "BRL",
-                      })}
+                      <p>
+                        {data.value.toLocaleString("pt-br", {
+                          style: "currency",
+                          currency: "BRL",
+                        })}
+                      </p>
                     </td>
                   ) : (
                     <td className="noExpense">
@@ -50,6 +56,14 @@ const Table = ({ datas }: Props) => {
                       })}
                     </td>
                   )}
+                  <td>
+                    <button
+                      className="btn-delete"
+                      onClick={() => onDelete(data.id)}
+                    >
+                      <AiOutlineDelete />
+                    </button>
+                  </td>
                 </tr>
               );
             })

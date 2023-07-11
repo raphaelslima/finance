@@ -23,8 +23,8 @@ export const filterDataByMonth = (datas: Data[], date: string): Data[] => {
 };
 
 export const formatDate = (date: Date): string => {
-  return `${date.getDate() > 10 ? date.getDate() : `0${date.getDate()}`}/${
-    date.getMonth() + 1 > 10 ? date.getMonth() + 1 : `0${date.getMonth() + 1}`
+  return `${date.getDate() >= 10 ? date.getDate() : `0${date.getDate()}`}/${
+    date.getMonth() + 1 >= 10 ? date.getMonth() + 1 : `0${date.getMonth() + 1}`
   }/${date.getFullYear()}`;
 };
 
@@ -45,4 +45,18 @@ export const formatCurrentMonth = (currentMonth: string): string => {
     "Dezembro",
   ];
   return `${monthPT[parseInt(month) - 1]} ${year}`;
+};
+
+export const dateRandom = (): Date => {
+  const currentDate = new Date();
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth() + 1;
+
+  const daysInTheMonth = new Date(year, month, 0).getDate();
+
+  const dayRandom = Math.floor(Math.random() * daysInTheMonth) + 1;
+
+  const dateRandom = new Date(year, month - 1, dayRandom);
+
+  return dateRandom;
 };

@@ -3,7 +3,6 @@ import "./style.css";
 
 // types
 import { Data } from "../../types/Data";
-import { Category } from "../../types/Category";
 
 //data
 import { categories } from "../../data/categories";
@@ -54,6 +53,10 @@ const Main = () => {
     setDataList(newListData);
   };
 
+  const onDelete = (id: number): void => {
+    setDataList((prev) => prev.filter((data) => data.id !== id));
+  };
+
   return (
     <main className="main">
       <Information
@@ -62,8 +65,8 @@ const Main = () => {
         income={income}
         expense={expense}
       />
-      <Form onAdd={onAdd} />
-      <Table datas={filterDataList} />
+      <Form onAdd={onAdd} dataList={datasList} />
+      <Table datas={filterDataList} onDelete={onDelete} />
     </main>
   );
 };
